@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+    <!-- Full Page Image Background Carousel Header -->
+    <div id="DragosSimonaWedding" class="carousel slide carousel-container" data-interval="false" data-wrap="false" data-keyboard="false">
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner" style="position:relative;">
+            {% for photo in photos %}
+            <div class="item {% if forloop.first %}active{% endif %}">
+                <!-- Set the first background image using inline CSS below. -->
+                    <img src="{{ photo.image.url }}" class="img-responsive vertical-centre">
+            </div>
+            {% endfor %}
+        </div>
+        <a class="right carousel-control" href="#DragosSimonaWedding" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+        <a class="left carousel-control" href="#DragosSimonaWedding" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+
+    </div>
+
+<!-- js libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="{% static 'js/jquery.mobile.custom.js' %}"></script>
+
+
+
+
+{% endblock content %}

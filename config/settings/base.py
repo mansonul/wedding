@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # (wedding/config/settings/base.py - 3 = wedding/)
+# (wedding/config/settings/base.py - 3 = wedding/)
+ROOT_DIR = environ.Path(__file__) - 3
 APPS_DIR = ROOT_DIR.path('wedding')
 
 # Load operating system environment variables and then prepare to use them
@@ -49,6 +50,7 @@ THIRD_PARTY_APPS = [
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'imagekit',
 ]
 
 # Apps specific for this project go here.
@@ -56,6 +58,7 @@ LOCAL_APPS = [
     # custom users app
     'wedding.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'photos',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -110,9 +113,21 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 # Uses django-environ to accept uri format
 # See: https://django-environ.readthedocs.io/en/latest/#supported-types
+# DATABASES = {
+#     'default': env.db('DATABASE_URL', default='postgres:///wedding'),
+# }
+
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///wedding'),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wedding',
+        'USER': 'nuntoman',
+        'PASSWORD': 'AandromedaA1@3$',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
 }
+
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 

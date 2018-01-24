@@ -14,7 +14,7 @@ whitenoise==3.3.1
 
 
 # Forms
-django-crispy-forms==1.7.0
+# django-crispy-forms==1.7.0
 
 # Models
 django-model-utils==3.1.1
@@ -27,7 +27,7 @@ argon2-cffi==18.1.0
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
-django-allauth==0.34.0
+# django-allauth==0.34.0
 
 
 # Python-PostgreSQL Database Adapter
@@ -40,8 +40,8 @@ awesome-slugify==1.6.5
 pytz==2017.3
 
 # Redis support
-django-redis==4.8.0
-redis>=2.10.5
+# django-redis==4.8.0
+# redis>=2.10.5
 
 
 
