@@ -7,6 +7,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Dragos
+requirements/local.txt
+requirements/test.txt
+
 # Distribution / packaging
 .Python
 build/
