@@ -48,3 +48,4 @@ pytz==2017.3
 
 
 # Your custom requirements go here
+django-imagekit==4.0.2

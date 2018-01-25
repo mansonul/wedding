@@ -46,10 +46,6 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = [
-    'crispy_forms',  # Form layouts
-    'allauth',  # registration
-    'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
     'imagekit',
 ]
 
@@ -113,20 +109,10 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 # Uses django-environ to accept uri format
 # See: https://django-environ.readthedocs.io/en/latest/#supported-types
-# DATABASES = {
-#     'default': env.db('DATABASE_URL', default='postgres:///wedding'),
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wedding',
-        'USER': 'nuntoman',
-        'PASSWORD': 'AandromedaA1@3$',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default': env.db('DATABASE_URL', default='postgres:///wedding'),
 }
+
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
