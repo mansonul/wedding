@@ -11,6 +11,7 @@ __pycache__/
 requirements/local.txt
 requirements/test.txt
 media/*
+config/settings/local.py
 
 # Distribution / packaging
 .Python
